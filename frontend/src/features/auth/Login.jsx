@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials, selectCurrentToken } from './authSlice';
 import { useLoginMutation } from './authApiSlice';
+import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+    const { id } = useAuth();
+
     const usernameRef = useRef();
 
     const [username, setUsername] = useState('');
@@ -20,8 +23,8 @@ const Login = () => {
     useEffect(() => {
         usernameRef.current.focus();
 
-        if (accessToken) {
-            console.log(accessToken);
+        if (id) {
+            console.log(id);
         }
     }, []);
 
