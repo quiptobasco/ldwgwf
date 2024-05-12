@@ -1,12 +1,11 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 
 const cookieParser = require('cookie-parser');
 
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
-
-const path = require('path');
 
 const connectDB = require('./config/db');
 const mongoose = require('mongoose');
@@ -35,15 +34,15 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/games', require('./routes/gameRoutes'));
 
-app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
+// app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 
 app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist')));
 
-app.get('*', (req, res) => {
-    res.sendFile(
-        path.join(__dirname, '..', '..', 'frontend', 'dist', 'index.html')
-    );
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(
+//         path.join(__dirname, '..', '..', 'frontend', 'dist', 'index.html')
+//     );
+// });
 
 const connectedSockets = {};
 const gameStates = {};
