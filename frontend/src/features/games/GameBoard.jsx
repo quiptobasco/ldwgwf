@@ -68,7 +68,7 @@ const GameBoard = () => {
         };
 
         const onEnterClicked = () => {
-            window.location.reload();
+            navigate(`/game/${id}`);
         };
 
         socket.on('letterClicked', onLetterClicked);
