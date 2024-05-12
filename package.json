@@ -4,8 +4,9 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon backend/server.js",
-        "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+        "dev": "vercel dev",
+        "build": "vercel build",
+        "start": "vercel start"
     },
     "keywords": [],
     "author": "",
