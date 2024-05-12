@@ -1,3 +1,3 @@
-const allowedOrigins = ['ldwgwf.vercel.app'];
+const allowedOrigins = ['https://ldwgwf.onrender.com/'];
 
 module.exports = allowedOrigins;

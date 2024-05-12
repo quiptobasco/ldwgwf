@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 
+const path = require('path');
+
 const connectDB = require('./config/db');
 const mongoose = require('mongoose');
 
@@ -16,11 +18,13 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://ldwgwf.vercel.app/',
+        origin: 'https://ldwgwf.onrender.com/',
     },
 });
 
 const PORT = process.env.PORT || 8008;
+
+const __dirname = path.resolve();
 
 connectDB();
 
@@ -32,6 +36,12 @@ app.use(cookieParser());
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/games', require('./routes/gameRoutes'));
+
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
+});
 
 const connectedSockets = {};
 const gameStates = {};
