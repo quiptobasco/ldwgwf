@@ -1,3 +1,3 @@
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['ldwgwf.vercel.app'];
 
 module.exports = allowedOrigins;
