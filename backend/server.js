@@ -30,7 +30,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'public')));
 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
