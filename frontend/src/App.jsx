@@ -15,12 +15,12 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout />}>
                 {/* Public Routes */}
-                <Route index element={<HomeScreen />} />
-                <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register />} />
-
-                {/* Private Routes */}
                 <Route element={<PersistLogin />}>
+                    <Route index element={<HomeScreen />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register />} />
+
+                    {/* Private Routes */}
                     <Route element={<RequireAuth />}>
                         <Route path="game">
                             <Route index element={<GamesList />} />

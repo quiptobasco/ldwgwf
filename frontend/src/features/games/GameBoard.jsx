@@ -80,7 +80,7 @@ const GameBoard = () => {
             socket.off('deleteClicked');
             socket.off('enterClicked');
         };
-    }, [id, currentGuess]);
+    }, [id, currentGuess, navigate]);
 
     const handleLetterClicked = (letter) => {
         if (currentGuess.length < 5) {
