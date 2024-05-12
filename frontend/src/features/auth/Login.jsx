@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setCredentials } from './authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCredentials, selectCurrentToken } from './authSlice';
 import { useLoginMutation } from './authApiSlice';
 import { toast } from 'react-toastify';
 
@@ -10,6 +10,7 @@ const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const accessToken = useSelector(selectCurrentToken);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -18,6 +19,10 @@ const Login = () => {
 
     useEffect(() => {
         usernameRef.current.focus();
+
+        if (accessToken) {
+            console.log(accessToken);
+        }
     }, []);
 
     const canSave = [username, password].every(Boolean) && !isLoading;
