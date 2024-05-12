@@ -1,5 +1,5 @@
 import { io } from 'socket.io-client';
 
-const URL = 'http://localhost:8008';
+const URL = 'https://ldwgwf.vercel.app/';
 
 export const socket = io(URL);
