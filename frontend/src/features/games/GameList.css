@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.names {
+    display: flex;
+    align-items: center;
+}
+
+.names span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.vs {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.turn-number {
+    display: flex;
+    align-items: center;
+}
+
+.turn-number-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.pagination li {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #082d55;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+
+.pagination li.active {
+    background-color: #007bff;
+}
+
+.create-game-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}

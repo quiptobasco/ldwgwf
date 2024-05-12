@@ -1,0 +1,230 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 150px;
+}
+
+.game-board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-board {
+    width: 500px;
+    height: 620px;
+
+    background-color: #002750;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.guess-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.guess-row:first-child {
+    margin-top: 30px;
+}
+
+.guess-row:last-child {
+    margin-bottom: 0;
+}
+
+.guess-tile {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 3px solid #007bff49;
+    margin-right: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.guess-tile:last-child {
+    margin-right: 0;
+}
+
+.guess-tile,
+.guess-tile.gray {
+    background-color: #007bff49;
+    color: #ffff;
+}
+
+.guess-tile.green {
+    border: 3px solid #29f316ce;
+    background-color: #29f316ce;
+    color: #fff;
+}
+
+.guess-tile.yellow {
+    border: 3px solid #ffd000ef;
+    background-color: #ffd000ef;
+    color: #333;
+}
+
+.guess-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.guessed-by-username {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.guess-tiles {
+    display: flex;
+}
+
+.guess-tiles.you {
+    display: flex;
+    border: 3px solid green;
+}
+
+.guess-tiles.them {
+    display: flex;
+    border: 3px solid yellow;
+}
+
+.keyboard {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.keyboard-keys {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.keyboard-key {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #333;
+    border-radius: 5px;
+    background-color: #d3d3d3;
+    color: #002750;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard-key:hover:not([disabled]) {
+    background-color: #b3b3b3;
+}
+
+.keyboard-key.green {
+    border: 3px solid #29f316ce;
+    background-color: #29f316ce;
+    color: #fff;
+}
+
+.keyboard-key.green:hover:not([disabled]) {
+    background-color: #29f316;
+}
+
+.keyboard-key.yellow {
+    border: 3px solid #ffd000ef;
+    background-color: #ffd000ef;
+    color: #333;
+}
+
+.keyboard-key.yellow:hover:not([disabled]) {
+    background-color: #ffd000;
+}
+
+.keyboard-key.gray {
+    background-color: #007bff49;
+    border: 3px solid #007bff49;
+    color: #ffff;
+}
+
+.keyboard-key.gray:hover:not([disabled]) {
+    background-color: #007bff49;
+}
+
+.keyboard-enter,
+.keyboard-backspace {
+    width: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard-enter {
+    background-color: #29f316ce;
+    color: #fff;
+}
+
+.keyboard-enter:hover:not([disabled]) {
+    background-color: #29f316;
+}
+
+.keyboard-backspace {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+.keyboard-backspace:hover:not([disabled]) {
+    background-color: #8f0101;
+}
+
+.keyboard-key:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+.keyboard-waiting {
+    color: #fff;
+}
+
+.word {
+    margin-top: 20px;
+    font-size: 25px;
+    color: #fff;
+}
+
+/* General styles */
+.game-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
