@@ -24,7 +24,7 @@ const io = new Server(server, {
 
 const PORT = process.env.PORT || 8008;
 
-// const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 connectDB();
 
