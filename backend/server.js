@@ -34,6 +34,8 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/games', require('./routes/gameRoutes'));
 
+express.static.mime.define({'text/css': ['css']});
+
 app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
 // console.log(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
